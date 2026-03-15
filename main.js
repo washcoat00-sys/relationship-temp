@@ -141,18 +141,19 @@ function generateLink() {
             alert('복사에 실패했습니다. 직접 복사해 주세요.');
         });
     });
-
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('userB')) {
-        userAAnswers = JSON.parse(atob(urlParams.get('answers')));
-        startScreen.style.display = 'none';
-        questionScreen.style.display = 'block';
-        currentQuestionIndex = 0;
-        userBFlow();
-    }
 }
 
-function userBFlow() {
+// User B Flow Activation
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('userB')) {
+    userAAnswers = JSON.parse(atob(urlParams.get('answers')));
+    startScreen.style.display = 'none';
+    questionScreen.style.display = 'block';
+    currentQuestionIndex = 0;
+    userBFlow();
+}
+
+function calculateResult() {
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
 
