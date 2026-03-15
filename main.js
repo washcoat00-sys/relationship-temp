@@ -1,4 +1,3 @@
-
 const questions = [
     {
         question: "일할 때 연락은?",
@@ -134,7 +133,7 @@ function generateLink() {
             copyBtn.style.backgroundColor = '#2ecc71';
             setTimeout(() => {
                 copyBtn.innerText = '링크 복사하기';
-                copyBtn.style.backgroundColor = '#ff6b6b';
+                copyBtn.style.backgroundColor = '#0c2461';
             }, 2000);
         }).catch(err => {
             console.error('Failed to copy: ', err);
@@ -153,7 +152,7 @@ if (urlParams.has('userB')) {
     userBFlow();
 }
 
-function calculateResult() {
+function userBFlow() {
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
 
@@ -245,8 +244,8 @@ function calculateResult() {
             datasets: [{
                 label: '일치율',
                 data: Object.values(categoryScores).map(s => s.match * 100),
-                backgroundColor: 'rgba(255, 107, 107, 0.5)',
-                borderColor: 'rgba(255, 107, 107, 1)',
+                backgroundColor: 'rgba(12, 36, 97, 0.5)',
+                borderColor: 'rgba(12, 36, 97, 1)',
                 borderWidth: 2
             }]
         },
