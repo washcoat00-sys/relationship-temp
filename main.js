@@ -77,16 +77,23 @@ startBtn.addEventListener('click', () => {
     }
 });
 
+const questionContent = document.getElementById('question-content');
+const progressBar = document.getElementById('progress-bar');
+
 function displayQuestion() {
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
         
+        // Update progress bar
+        const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+        progressBar.style.width = `${progress}%`;
+
         // Trigger animation
         questionScreen.style.animation = 'none';
         questionScreen.offsetHeight; // trigger reflow
         questionScreen.style.animation = '';
 
-        questionScreen.innerHTML = `
+        questionContent.innerHTML = `
             <h2>${question.question}</h2>
             <button class="option-btn">${question.options[0]}</button>
             <button class="option-btn">${question.options[1]}</button>
@@ -106,7 +113,7 @@ function displayQuestion() {
 
 function generateLink() {
     const uniqueLink = `${window.location.href}?userB=true&answers=${btoa(JSON.stringify(userAAnswers))}`;
-    questionScreen.innerHTML = `
+    questionContent.innerHTML = `
         <h2>링크를 공유해주세요!</h2>
         <p>아래 링크를 상대방에게 공유하고, 상대방이 답변을 완료하면 결과를 확인할 수 있습니다.</p>
         <div class="link-container">
@@ -149,12 +156,16 @@ function userBFlow() {
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
 
+        // Update progress bar
+        const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+        progressBar.style.width = `${progress}%`;
+
         // Trigger animation
         questionScreen.style.animation = 'none';
         questionScreen.offsetHeight; // trigger reflow
         questionScreen.style.animation = '';
 
-        questionScreen.innerHTML = `
+        questionContent.innerHTML = `
             <h2>${question.question}</h2>
             <button class="option-btn">${question.options[0]}</button>
             <button class="option-btn">${question.options[1]}</button>

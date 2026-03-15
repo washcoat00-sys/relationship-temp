@@ -12,6 +12,7 @@
 
 *   **User Input:** Users can enter their name and select their relationship type (e.g., 연인, 친구, 직장동료).
 *   **Questionnaire:** A set of 10 balance-game style questions is presented to the user to gauge their values in different aspects of a relationship.
+*   **Progress Bar:** A visual progress bar at the top of the questionnaire indicates how many questions have been answered, updating smoothly as the user proceeds.
 *   **Link Sharing:** After completing the questionnaire, the first user receives a unique link to share with the second user.
 *   **Link Copying Button:** A "Copy Link" button is provided to easily copy the unique URL to the clipboard with one click, including visual feedback upon success.
 *   **Second User Flow:** The second user opens the link and answers the same set of questions.
