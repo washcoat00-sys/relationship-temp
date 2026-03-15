@@ -80,6 +80,12 @@ startBtn.addEventListener('click', () => {
 function displayQuestion() {
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
+        
+        // Trigger animation
+        questionScreen.style.animation = 'none';
+        questionScreen.offsetHeight; // trigger reflow
+        questionScreen.style.animation = '';
+
         questionScreen.innerHTML = `
             <h2>${question.question}</h2>
             <button class="option-btn">${question.options[0]}</button>
@@ -142,6 +148,12 @@ function generateLink() {
 function userBFlow() {
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
+
+        // Trigger animation
+        questionScreen.style.animation = 'none';
+        questionScreen.offsetHeight; // trigger reflow
+        questionScreen.style.animation = '';
+
         questionScreen.innerHTML = `
             <h2>${question.question}</h2>
             <button class="option-btn">${question.options[0]}</button>

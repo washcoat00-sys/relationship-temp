@@ -28,6 +28,7 @@
 ## Design and Styling
 
 *   **Modern UI:** The application features a clean, modern design with a user-friendly interface.
+*   **Animated Transitions:** Smooth fade-in and slide-up animations are applied when switching between screens and when a new question is presented, providing a more engaging user experience.
 *   **Color Palette:** A vibrant and engaging color scheme is used to create a positive user experience.
 *   **Responsive Design:** The layout is designed to be responsive and work well on various screen sizes (though not explicitly tested on mobile yet).
 *   **Typography:** Clear and legible fonts are used to enhance readability.
