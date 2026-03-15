@@ -1,14 +1,37 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리 사이, 몇 도(Degree)?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <div id="app">
+        <div id="start-screen">
+            <h1>우리 사이, 몇 도(Degree)?</h1>
+            <input type="text" id="user-name" placeholder="당신의 이름은?">
+            <select id="relationship-type">
+                <option value="lover">연인</option>
+                <option value="friend">친구</option>
+                <option value="colleague">직장동료</option>
+            </select>
+            <button id="start-btn">시작하기</button>
+        </div>
+
+        <div id="question-screen" style="display: none;">
+            <!-- Questions will be dynamically inserted here -->
+        </div>
+
+        <div id="result-screen" style="display: none;">
+            <h2 id="temperature"></h2>
+            <p id="nickname"></p>
+            <p id="one-line-review"></p>
+            <canvas id="result-chart"></canvas>
+            <p id="prescription"></p>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
